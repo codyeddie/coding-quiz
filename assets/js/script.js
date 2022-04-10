@@ -5,6 +5,10 @@ var answerChoice1 = document.getElementById("answer1");
 var answerChoice2 = document.getElementById("answer2");
 var answerChoice3 = document.getElementById("answer3");
 var answerChoice4 = document.getElementById("answer4");
+var score = 0 
+var timer;
+var timerCounter = 30;
+var countdown = document.getElementById("countdown");
 
 quizBox.style.display = "none";
 
@@ -41,6 +45,15 @@ startQuiz.addEventListener("click", function () {
     quizBox.style.display = "block";
     startQuiz.style.display = "none";
     genQuestion();
+    timer = setInterval(function() {
+        countdown.textContent = "timer:" + timerCounter;
+        if (timerCounter > 0) {
+            timerCounter--
+        } else {
+            clearInterval(timer)
+            countdown.textContent = "time's up";
+        }
+    },1000)
 })
 
 function genQuestion() {
@@ -59,7 +72,23 @@ answerChoice4.addEventListener("click", checkAnswer)
 function checkAnswer() {
     var answerSelection = this.textContent;
     console.log(answerSelection);
+    if (answerSelection == questionsList[currentQuestion].correctAnswer){
+        score += 10;
+    } else {
+        timerCounter -= 5
+    }
+    if (currentQuestion < questionsList.length - 1) {
+        currentQuestion++
+        genQuestion();
+        console.log(score,)
+    }
+    else {
+        clearInterval(timer)
+    }
+    console.log("check")
 }
+
+
 
 
 // quizBox.appendChild(quizQuestion);
