@@ -6,7 +6,7 @@ var answerChoice1 = document.getElementById("answer1");
 var answerChoice2 = document.getElementById("answer2");
 var answerChoice3 = document.getElementById("answer3");
 var answerChoice4 = document.getElementById("answer4");
-var score = 0
+var score = 0;
 var timer;
 var timerCounter = 30;
 var countdown = document.getElementById("countdown");
@@ -22,7 +22,8 @@ var getInitials = function () {
         initials = prompt("Please enter your initials to log your score.");
     }
     console.log("Your intitials are " + initials);
-    countdown.textContent = "Great job " + initials + "! You finished with a score of " + score + " with " + timerCounter + " seconds left! Press start quiz to try again.";
+    countdown.textContent = "Great job " + initials + "! You finished with a score of " + score + " with " + timerCounter + " seconds left! Come back later or refresh the page to try again.";
+    localStorage.setItem('Saved Score', initials + score);
 }
 
 // an array that contains all the questions and answers for the quiz
@@ -93,12 +94,8 @@ var quizBegin = function () {
         } else {
             clearInterval(timer)
             getInitials();
-            // window.alert("Your time is up! You finished with a score of " + score + "! Great job!")
-            // countdown.textContent = "TIME'S UP! Great job" + initials + "! You finished with a score of " + score + "! Press start quiz to try again.";
             quizBox.style.display = "none"
-            startQuiz.style.display = "block"
         }
-        
     }, 1000)
 };
 
@@ -137,7 +134,8 @@ function checkAnswer() {
         genQuestion();
         console.log(score,)
     }
-    else {
+    else if (currentQuestion == questionsList.length) {
         clearInterval(timer)
+        getInitials();
     }
 }
