@@ -23,7 +23,7 @@ var getInitials = function () {
     }
     console.log("Your intitials are " + initials);
     countdown.textContent = "Great job " + initials + "! You finished with a score of " + score + " with " + timerCounter + " seconds left! Come back later or refresh the page to try again.";
-    localStorage.setItem('Saved Score', initials + score);
+    localStorage.setItem('Saved Score', initials + score + timerCounter);
 }
 
 // an array that contains all the questions and answers for the quiz
