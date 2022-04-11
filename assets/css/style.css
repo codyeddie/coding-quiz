@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+header div {
+    margin: 0px auto;
+    padding: 10px;
+    /* border: solid 2px blue; */
+    width: 60%
+}
+
+header h1 {
+    /* margin: 0px auto; */
+    background-color:aquamarine;
+    font-size: 35px;
+    width: 50%;
+    text-align: center;
+}
+
+header div ul li {
+    margin: 0px 10px;
+    width: 100%;
+    align-items: center;
+    line-height: 1.2;
+}
+
+header button {
+    margin: 10px;
+    width: 50%
+}
+
+header p {
+    margin: 8px;
+    padding: 10px;
+    color: red;
+    font-size: 15px;
+}
+
+section div {
+    margin: 0px auto;
+    padding: 10px;
+    /* border: solid 2px blue; */
+    width: 60%
+}
+
+section h2 {
+    margin: 0px auto;
+    background-color:aquamarine;
+    font-size: 35px;
+    width: 50%;
+    text-align: center;
+}
+
+section div ul li {
+    margin: 10px;
+    width: 100%;
+    align-items: center;
+    line-height: 1.2;
+}
+
