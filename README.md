@@ -10,6 +10,7 @@ Create a timed quiz that keeps track of score per question answered correctly an
 
 ## Link
 https://codyeddie.github.io/coding-quiz/
+<img src="./assets/images/coding-quiz.jpg"/>
 
 ## Contributions 
 Made by Cody Eddie
